@@ -99,7 +99,7 @@ define(['mapLoader'], function (mapLoader) {
                             radius: 1000,
                             extensions: "all"
                         });
-                        geocoder.getAddress(lnglatXY, function (status, result) {
+                        geocoder.getFormatAddress(lnglatXY, function (status, result) {
                             if (status === 'complete' && result.info === 'OK') {
                                 geocoder_CallBack(result);
                             } else {
