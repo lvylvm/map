@@ -93,6 +93,7 @@ define(['mapLoader'], function (mapLoader) {
                     });
 
                     var lnglatXY = [lng, lat];
+                    alert(lnglatXY);
 
                     function regeocoder() {  //逆地理编码
                         var geocoder = new AMap.Geocoder({
