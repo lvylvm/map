@@ -10,6 +10,8 @@ define(['mapLoader'], function (mapLoader) {
             mapLoader(function () {
                 var map = new AMap.Map('container', {//显示地图
                     resizeEnable: true,
+                    dragEnable: false, //是否允许拖拽
+                    doubleClickZoom: false, //是否运行双击放大
                     zoom: 15
                 });
                 var geolocation;
