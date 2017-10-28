@@ -33,7 +33,7 @@ define(['mapLoader'], function (mapLoader) {
                         isComplete = true;
                         var lng = p.position.getLng();
                         var lat = p.position.getLat();
-                        render(lng, lat, p.accuracy);
+                        render(lng, lat, p.accuracy,p.formattedAddress);
                     }
 
                     // 定位失败，显示失败原因
@@ -86,21 +86,21 @@ define(['mapLoader'], function (mapLoader) {
                 }, 10000);
 
                 //渲染地图
-                function render(lng, lat, accuracy) {
+                function render(lng, lat, accuracy,address) {
                     new AMap.Marker({//添加标记
                         map: map,
                         position: [lng, lat]
                     });
 
                     var lnglatXY = [lng, lat];
-
+                    $("#address").text(address);
                     function regeocoder() {  //逆地理编码
-                        alert(lnglatXY);
                         var geocoder = new AMap.Geocoder({
                             radius: 1000,
                             extensions: "all"
                         });
                         geocoder.getAddress(lnglatXY, function (status, result) {
+                            alert(status);
                             if (status === 'complete' && result.info === 'OK') {
                                 geocoder_CallBack(result);
                             } else {
