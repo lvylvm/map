@@ -33,7 +33,6 @@ define(['mapLoader'], function (mapLoader) {
                         isComplete = true;
                         var lng = p.position.getLng();
                         var lat = p.position.getLat();
-                        alert(lng + "," + lat);
                         render(lng, lat, p.accuracy);
                     }
 
@@ -116,7 +115,8 @@ define(['mapLoader'], function (mapLoader) {
                         var ak = '';//此处的key，为Web服务API的key，与JavaScript API的key不是同一个
                         var imgAddr = 'https://restapi.amap.com/v3/staticmap?location=' + lng + ',' + lat + '&zoom=17&size=400*400&markers=mid,,A:' + lng + ',' + lat + '&key=' + ak;
 
-                        alert(imgAddr);
+                        $("#address").text(address);
+                        $("#container img").attr('src',imgAddr);
                         me.waiting = false;
                         alert('定位成功');
                     }
