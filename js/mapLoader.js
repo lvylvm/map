@@ -12,6 +12,6 @@ define(['zepto'],function ($) {
         promise.done(cb);
     }
 
-    require(['https://webapi.amap.com/maps?v=1.4.0&key=&&plugin=AMap.Geocoder&callback=_mapInit']);
+    require(['https://webapi.amap.com/maps?v=1.4.1&key=e8496e8ac4b0f01100b98da5bde96597&plugin=AMap.Geocoder&callback=_mapInit']);
     return mapInit;
 });

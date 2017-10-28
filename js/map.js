@@ -99,8 +99,7 @@ define(['mapLoader'], function (mapLoader) {
                             radius: 1000,
                             extensions: "all"
                         });
-                        geocoder.getFormatAddress(lnglatXY, function (status, result) {
-                            alert(status)
+                        geocoder.getAddress(lnglatXY, function (status, result) {
                             if (status === 'complete' && result.info === 'OK') {
                                 geocoder_CallBack(result);
                             } else {
@@ -112,7 +111,6 @@ define(['mapLoader'], function (mapLoader) {
                     }
 
                     function geocoder_CallBack(data) {
-                        alert(data)
                         var address = data.regeocode.formattedAddress; //返回地址描述
                         me.address = address;
                         var ak = '';//此处的key，为Web服务API的key，与JavaScript API的key不是同一个
