@@ -93,9 +93,9 @@ define(['mapLoader'], function (mapLoader) {
                     });
 
                     var lnglatXY = [lng, lat];
-                    alert(lnglatXY);
 
                     function regeocoder() {  //逆地理编码
+                        alert(lnglatXY);
                         var geocoder = new AMap.Geocoder({
                             radius: 1000,
                             extensions: "all"
